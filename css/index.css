@@ -31,43 +31,55 @@ section {
     background: transparent;
 }
 nav ul {
+    width: 100%;
     display: flex;
     list-style: none;
-    float: right;
-    margin: 50px;
+    padding: 0;
+
 }
 nav li {
     width: 100px;
     text-align: center;
     padding-bottom: 15px;
+    margin: 0px auto;
 }
 nav li:hover {
     border-bottom: 3px solid #fff;
 }
 .pic_container {
     margin: 0px auto;
-    width: 500px;
+    width: 100%;
     height: 500px;
     position: relative;
 }
 .pic_contentfirst {
-    background: #E93EFF;
     z-index:3;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transition: all 1.5s;
 }
 .pic_contentsecond {
-    background: #33FFDD;
-    width: 100%;
-    height: 100%;
-    z-index:2;
+    opacity: 0;
+    z-index: 2;
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transition: all 1.5s;
 }
 .pic_contentfirst:hover {
-    background: transparent;
-    transition:all 5.5s;
+    opacity: 0;
 }
+.pic_contentfirst:hover + .pic_contentsecond{
+    opacity: 1;
+}
+
 .fix {
     position: fixed;
     margin-right: 25%;
